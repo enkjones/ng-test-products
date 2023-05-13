@@ -1,0 +1,27 @@
+<app-top-bar></app-top-bar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+  <!-- <div> {{example | json}} </div> -->
+
+  <table *ngIf="example; else showErr">
+    <ng-container *ngFor="let p of example">
+      <!-- <table> -->
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.title }}</td>
+        <td>{{ p.completed }}</td>
+      </tr>
+      <!-- </table> -->
+      <!-- <li>{{ p.id }} {{ p.title }} {{ p.completed }}</li> -->
+    </ng-container>
+  </table>
+
+  <ng-template #showErr> Im an error </ng-template>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
